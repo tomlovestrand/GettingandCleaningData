@@ -55,4 +55,4 @@ names(subsetData)<-gsub("\\(\\)", "", names(subsetData))
 
 ## 5. Create a 2nd independent tidy data set with the average of each variable for each activity and each subject.
 meansBySubjectActivity<-aggregate(subsetData[3:88], by=list(Subject=subsetData[,1], Activity=subsetData[,2]), FUN=mean)
-write.csv(meansBySubjectActivity, "./data/UCI HAR Dataset/meansBySubjectActivity.csv", row.names=FALSE )
+write.table(meansBySubjectActivity, "./data/UCI HAR Dataset/meansBySubjectActivity.csv", row.names=FALSE )
